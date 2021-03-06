@@ -10,7 +10,7 @@ from datetime import datetime as dt
 
 
 debut = dt.today()
-incident = pd.read_excel("LFB_Incident_January 2017_2021.xlsx",sheet_name='Sheet1',)
+incident = pd.read_excel("LFB_Incident_January 2017_2021.xlsx",sheet_name='Sheet1',index_col=0)
 incident.head()
 
 fin = dt.today()
