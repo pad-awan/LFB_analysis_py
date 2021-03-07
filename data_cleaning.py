@@ -8,8 +8,9 @@ Created on Fri Mar  5 23:13:18 2021
 import pandas as pd
 from datetime import datetime as dt
 
+# timer du début
 debut = dt.today()
-
+# lister les colonnes que l'on garde du fichier des incidents
 usecols1= ['IncidentNumber','DateOfCall','TimeOfCall','IncidentGroup','StopCodeDescription','SpecialServiceType','PropertyCategory' ,'PropertyType',
           'AddressQualifier','IncGeo_BoroughCode','IncGeo_WardNameNew', 'IncGeo_WardCode','ProperCase','Latitude','Longitude','IncidentStationGround',
           'FirstPumpArriving_DeployedFromStation','SecondPumpArriving_DeployedFromStation','FirstPumpArriving_AttendanceTime',
@@ -19,6 +20,8 @@ file1 = 'LFB Incident data from January 2017.xlsx'
 incident = pd.read_excel(io=file1,usecols=usecols1 , sheet_name=0, index_col=0 ,date_parser='DateOfCall')
 # incident = pd.read_excel("LFB_Incident_January 2017_2021.xlsx",sheet_name='Sheet1',index_col=0)
 file2 = "LFB Mobilisation data from January 2017.xlsx"
+
+# lister les colonnes que l'on garde du fichier des mobilisations
 usecols2=['IncidentNumber','DateAndTimeMobilised','DateAndTimeMobile','DateAndTimeArrived','DateAndTimeLeft',
          'DeployedFromStation_Code','DelayCodeId','DeployedFromStation_Name']
 mobilisation = pd.read_excel(io=file2,index_col=0,usecols = usecols2)
@@ -59,7 +62,7 @@ df_merged[to_fillna] = df_merged[to_fillna].fillna(0)
 to_fill_no = ['FirstPumpArriving_DeployedFromStation','SecondPumpArriving_DeployedFromStation']
 df_merged[to_fill_no] = df_merged[to_fill_no].fillna('no')
 
-
+# toutes les variables de fill_no deviennent des catégories
 df_merged[to_fill_no] = df_merged[to_fill_no].astype('category')
 df_merged.info()
 cat_data = df_merged.select_dtypes(include=['O','category'])
