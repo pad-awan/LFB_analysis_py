@@ -55,3 +55,24 @@ plt.xticks([0, 2, 4, 6, 8, 10, 12, 14, 16, 18, 20, 22, 24], ['0','2','4','6','8'
 ;
 
 
+# Etude de la corrélation entre le temps d'arrivée des pompiers et la caserne du lieu de l'incident par le test ANOVA
+
+import statsmodels.api
+
+#                                      variable_continue                 variable_categorielle 
+result = statsmodels.formula.api.ols('FirstPumpArriving_AttendanceTime ~ IncidentStationGround', data = dfw).fit()  
+table = statsmodels.api.stats.anova_lm(result)
+
+print(table)
+##                             df        sum_sq       mean_sq           F  PR(>F)\
+##IncidentStationGround     101.0  3.744967e+08  3.707889e+06  224.890618     0.0 
+##Residual               389079.0  6.414948e+09  1.648752e+04         NaN     NaN 
+##
+
+
+# la p-value (PR(>F)) est inférieur à 5 % elle vaut 0.0 donc on rejette l'hypothèse 
+# selon laquelle IncidentStationGround n'influe pas sur FirstPumpArriving_AttendanceTime
+
+
+
+
