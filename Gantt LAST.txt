@@ -1,0 +1,184 @@
+#Install Plotly
+pip install plotly==4.14.3
+
+############# EQUIPE
+import plotly.express as px
+import pandas as pd
+
+dfequipe = pd.DataFrame([
+    dict(Task="Equipe", Start='2021-02-23', Finish='2021-02-24', Resource="Zoom Calls"),
+    dict(Task="Equipe", Start='2021-02-25', Finish='2021-02-26', Resource="Zoom Calls"),
+    dict(Task="Equipe", Start='2021-03-01', Finish='2021-03-02', Resource="Zoom Calls"),
+    dict(Task="Equipe", Start='2021-03-04', Finish='2021-03-05', Resource="Zoom Calls"),
+    dict(Task="Equipe", Start='2021-03-12', Finish='2021-03-16', Resource="Zoom Calls"),
+    dict(Task="Equipe", Start='2021-03-19', Finish='2021-03-20', Resource="Zoom Calls"),
+    dict(Task="Equipe", Start='2021-03-22', Finish='2021-03-23', Resource="Zoom Calls"),
+    dict(Task="Equipe", Start='2021-03-24', Finish='2021-03-25', Resource="Zoom Calls"),
+    dict(Task="Equipe", Start='2021-03-27', Finish='2021-03-28', Resource="Zoom Calls"),
+    dict(Task="Equipe", Start='2021-03-29', Finish='2021-03-30', Resource="Zoom Calls"),
+    dict(Task="Equipe", Start='2021-03-31', Finish='2021-04-01', Resource="Zoom Calls"),
+
+    dict(Task="Equipe", Start='2021-02-22', Finish='2021-03-09', Resource="Traitement des données"),
+    
+    dict(Task="Equipe", Start='2021-02-28', Finish='2021-03-16', Resource="DataViz"),
+    dict(Task="Equipe", Start='2021-03-25', Finish='2021-03-27', Resource="DataViz"),
+    
+    dict(Task="Equipe", Start='2021-03-08', Finish='2021-03-16', Resource="Itération 1"),
+    
+    dict(Task="Equipe", Start='2021-03-16', Finish='2021-03-25', Resource="Itération 2"),
+    
+    dict(Task="Equipe", Start='2021-03-04', Finish='2021-04-01', Resource="Structuration du rapport"),
+    
+    dict(Task="Equipe", Start='2021-03-27', Finish='2021-04-07', Resource="Streamlit")])
+
+
+fig = px.timeline(dfequipe, x_start="Start", x_end="Finish", y="Resource", color="Resource", width=850, height=350)
+fig.update_layout(showlegend=False, title = "Temps total equipe", title_x=0.56)
+fig.update_yaxes(title="", tickfont_family="Arial Black")
+fig.show()
+
+
+
+############# FRANCK
+dffranck = pd.DataFrame([
+    dict(Task="Franck", Start='2021-02-23', Finish='2021-02-24', Resource="Zoom Calls"),
+    dict(Task="Franck", Start='2021-02-25', Finish='2021-02-26', Resource="Zoom Calls"),
+    dict(Task="Franck", Start='2021-03-01', Finish='2021-03-02', Resource="Zoom Calls"),
+    dict(Task="Franck", Start='2021-03-04', Finish='2021-03-05', Resource="Zoom Calls"),
+    dict(Task="Franck", Start='2021-03-12', Finish='2021-03-16', Resource="Zoom Calls"),
+    dict(Task="Franck", Start='2021-03-19', Finish='2021-03-20', Resource="Zoom Calls"),
+    dict(Task="Franck", Start='2021-03-22', Finish='2021-03-23', Resource="Zoom Calls"),
+    dict(Task="Franck", Start='2021-03-24', Finish='2021-03-25', Resource="Zoom Calls"),
+    dict(Task="Franck", Start='2021-03-27', Finish='2021-03-28', Resource="Zoom Calls"),
+    dict(Task="Franck", Start='2021-03-29', Finish='2021-03-30', Resource="Zoom Calls"),
+    dict(Task="Franck", Start='2021-03-31', Finish='2021-04-01', Resource="Zoom Calls"),
+
+    dict(Task="Franck", Start='2021-02-23', Finish='2021-02-26', Resource="Traitement des données"),
+    
+    dict(Task="Franck", Start='2021-03-02', Finish='2021-03-04', Resource="DataViz"),
+    dict(Task="Franck", Start='2021-03-06', Finish='2021-03-08', Resource="DataViz"),
+    
+    dict(Task="Franck", Start='2021-03-10', Finish='2021-03-16', Resource="Itération 1"),
+    
+    dict(Task="Franck", Start='2021-03-17', Finish='2021-03-25', Resource="Itération 2"),
+    
+    dict(Task="Franck", Start='2021-02-22', Finish='2021-02-22', Resource="Structuration du rapport"),
+    
+    dict(Task="Franck", Start='2021-03-27', Finish='2021-04-07', Resource="Streamlit")])
+
+
+fig = px.timeline(dffranck, x_start="Start", x_end="Finish", y="Resource", color="Resource", width=850, height=350)
+fig.update_layout(showlegend=False, title = "Franck", title_x=0.56)
+fig.update_yaxes(title="", tickfont_family="Arial Black")
+fig.show()
+
+
+
+############# ARNAUD
+dfarnaud = pd.DataFrame([
+    dict(Task="Arnaud", Start='2021-02-23', Finish='2021-02-24', Resource="Zoom Calls"),
+    dict(Task="Arnaud", Start='2021-02-25', Finish='2021-02-26', Resource="Zoom Calls"),
+    dict(Task="Arnaud", Start='2021-03-01', Finish='2021-03-02', Resource="Zoom Calls"),
+    dict(Task="Arnaud", Start='2021-03-04', Finish='2021-03-05', Resource="Zoom Calls"),
+    dict(Task="Arnaud", Start='2021-03-12', Finish='2021-03-16', Resource="Zoom Calls"),
+    dict(Task="Arnaud", Start='2021-03-19', Finish='2021-03-20', Resource="Zoom Calls"),
+    dict(Task="Arnaud", Start='2021-03-22', Finish='2021-03-23', Resource="Zoom Calls"),
+    dict(Task="Arnaud", Start='2021-03-24', Finish='2021-03-25', Resource="Zoom Calls"),
+    dict(Task="Arnaud", Start='2021-03-27', Finish='2021-03-28', Resource="Zoom Calls"),
+    dict(Task="Arnaud", Start='2021-03-29', Finish='2021-03-30', Resource="Zoom Calls"),
+    dict(Task="Arnaud", Start='2021-03-31', Finish='2021-04-01', Resource="Zoom Calls"),
+
+    dict(Task="Arnaud", Start='2021-02-22', Finish='2021-03-07', Resource="Traitement des données"),
+    
+    dict(Task="Arnaud", Start='2021-03-02', Finish='2021-03-02', Resource="DataViz"),
+    
+    dict(Task="Arnaud", Start='2021-03-08', Finish='2021-03-16', Resource="Itération 1"),
+    
+    dict(Task="Arnaud", Start='2021-03-16', Finish='2021-03-25', Resource="Itération 2"),
+    
+    dict(Task="Arnaud", Start='2021-02-22', Finish='2021-02-22', Resource="Structuration du rapport"),
+    
+    dict(Task="Arnaud", Start='2021-03-27', Finish='2021-04-07', Resource="Streamlit")])
+
+
+fig = px.timeline(dfarnaud, x_start="Start", x_end="Finish", y="Resource", color="Resource", width=850, height=350)
+fig.update_layout(showlegend=False, title = "Arnaud", title_x=0.56)
+fig.update_yaxes(title="", tickfont_family="Arial Black")
+fig.show()
+
+
+
+############# IVAN
+dfivan = pd.DataFrame([
+    dict(Task="Ivan", Start='2021-02-23', Finish='2021-02-24', Resource="Zoom Calls"),
+    dict(Task="Ivan", Start='2021-02-25', Finish='2021-02-26', Resource="Zoom Calls"),
+    dict(Task="Ivan", Start='2021-03-01', Finish='2021-03-02', Resource="Zoom Calls"),
+    dict(Task="Ivan", Start='2021-03-04', Finish='2021-03-05', Resource="Zoom Calls"),
+    dict(Task="Ivan", Start='2021-03-12', Finish='2021-03-16', Resource="Zoom Calls"),
+    dict(Task="Ivan", Start='2021-03-19', Finish='2021-03-20', Resource="Zoom Calls"),
+    dict(Task="Ivan", Start='2021-03-22', Finish='2021-03-23', Resource="Zoom Calls"),
+    dict(Task="Ivan", Start='2021-03-24', Finish='2021-03-25', Resource="Zoom Calls"),
+    dict(Task="Ivan", Start='2021-03-27', Finish='2021-03-28', Resource="Zoom Calls"),
+    dict(Task="Ivan", Start='2021-03-29', Finish='2021-03-30', Resource="Zoom Calls"),
+    dict(Task="Ivan", Start='2021-03-31', Finish='2021-04-01', Resource="Zoom Calls"),
+
+    dict(Task="Ivan", Start='2021-02-22', Finish='2021-03-04', Resource="Traitement des données"),
+    
+    dict(Task="Ivan", Start='2021-03-08', Finish='2021-03-16', Resource="DataViz"),
+    
+    dict(Task="Ivan", Start='2021-03-12', Finish='2021-03-13', Resource="Itération 1"),
+    dict(Task="Ivan", Start='2021-03-14', Finish='2021-03-15', Resource="Itération 1"),
+    
+    dict(Task="Ivan", Start='2021-03-19', Finish='2021-03-20', Resource="Itération 2"),
+    dict(Task="Ivan", Start='2021-03-22', Finish='2021-03-23', Resource="Itération 2"),
+    
+    dict(Task="Ivan", Start='2021-03-04', Finish='2021-04-01', Resource="Structuration du rapport"),
+    
+    dict(Task="Ivan", Start='2021-03-30', Finish='2021-04-07', Resource="Streamlit")])
+
+
+fig = px.timeline(dfivan, x_start="Start", x_end="Finish", y="Resource", color="Resource", width=850, height=350)
+fig.update_layout(showlegend=False, title = "Ivan", title_x=0.56)
+fig.update_yaxes(title="", tickfont_family="Arial Black")
+fig.show()
+
+
+
+############# CEDRIC
+dfcedric = pd.DataFrame([
+    dict(Task="Cédric", Start='2021-02-23', Finish='2021-02-24', Resource="Zoom Calls"),
+    dict(Task="Cédric", Start='2021-02-25', Finish='2021-02-26', Resource="Zoom Calls"),
+    dict(Task="Cédric", Start='2021-03-01', Finish='2021-03-02', Resource="Zoom Calls"),
+    dict(Task="Cédric", Start='2021-03-04', Finish='2021-03-05', Resource="Zoom Calls"),
+    dict(Task="Cédric", Start='2021-03-12', Finish='2021-03-16', Resource="Zoom Calls"),
+    dict(Task="Cédric", Start='2021-03-19', Finish='2021-03-20', Resource="Zoom Calls"),
+    dict(Task="Cédric", Start='2021-03-22', Finish='2021-03-23', Resource="Zoom Calls"),
+    dict(Task="Cédric", Start='2021-03-24', Finish='2021-03-25', Resource="Zoom Calls"),
+    dict(Task="Cédric", Start='2021-03-27', Finish='2021-03-28', Resource="Zoom Calls"),
+    dict(Task="Cédric", Start='2021-03-29', Finish='2021-03-30', Resource="Zoom Calls"),
+    dict(Task="Cédric", Start='2021-03-31', Finish='2021-04-01', Resource="Zoom Calls"),
+
+    dict(Task="Cédric", Start='2021-02-22', Finish='2021-03-09', Resource="Traitement des données"),
+    
+    dict(Task="Cédric", Start='2021-02-28', Finish='2021-03-16', Resource="DataViz"),
+    dict(Task="Cédric", Start='2021-03-25', Finish='2021-03-27', Resource="DataViz"),
+    
+
+    dict(Task="Cédric", Start='2021-03-12', Finish='2021-03-13', Resource="Itération 1"),
+    dict(Task="Cédric", Start='2021-03-14', Finish='2021-03-15', Resource="Itération 1"),
+    
+    dict(Task="Cédric", Start='2021-03-19', Finish='2021-03-20', Resource="Itération 2"),
+    dict(Task="Cédric", Start='2021-03-22', Finish='2021-03-23', Resource="Itération 2"),
+    
+    
+    dict(Task="Cédric", Start='2021-03-14', Finish='2021-03-19', Resource="Structuration du rapport"),
+    dict(Task="Cédric", Start='2021-03-24', Finish='2021-03-27', Resource="Structuration du rapport"),
+    dict(Task="Cédric", Start='2021-03-31', Finish='2021-04-01', Resource="Structuration du rapport"),
+    
+    dict(Task="Cédric", Start='2021-03-30', Finish='2021-04-07', Resource="Streamlit")])
+
+
+fig = px.timeline(dfcedric, x_start="Start", x_end="Finish", y="Resource", color="Resource", width=850, height=350)
+fig.update_layout(showlegend=False, title = "Cédric", title_x=0.56)
+fig.update_yaxes(title="", tickfont_family="Arial Black")
+fig.show()
