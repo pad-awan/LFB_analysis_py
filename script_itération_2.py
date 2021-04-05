@@ -23,7 +23,7 @@ dfm = pd.read_excel('LFB Mobilisation data from January 2017.xlsx')
 
 # Fusion des datasets sur la colonne commune IncidentNumber (on ne garde que les incidents en commun avec inner)
 fusion = dfi.merge(right = dfm, on = 'IncidentNumber', how = 'inner') 
-
+fusion.info()
 
 # chargement du dataset de travail à partir de la fusion 
 # On ne retient que les lignes qui correspondent au premier camion (PumpOrder = 1) de la première équipe de pompiers arrivée sur les lieux
@@ -275,7 +275,7 @@ dfw.shape
 # on ajoute les colonnes temps moyens, médians, écart type, min, max au dataframe de travail par un merge sur les colonnes communes 
 # IncGeo_WardName, DelayCodeId
 dfw = dfw.merge(right = df_sqid, on=["IncGeo_WardName", "DelayCodeId"] , how = 'inner') 
-
+dfw.to_csv('dfw.csv')
 #dfw.shape
 
 # on supprime les colonnes devenues inutiles
@@ -587,7 +587,7 @@ num_X_test_inverse.shape
 print(num_X_test_inverse[(num_X_test_inverse.ProperCase_num == 11)&(num_X_test_inverse.IncidentGroup_num == 2)&(num_X_test_inverse.CalWeekDay == 0)].sort_values(['CalWeekDay','HourOfCall']).head(20))
 # récupératiob des mêmes données dans res
 res = num_X_test_inverse[(num_X_test_inverse.ProperCase_num == 11)&(num_X_test_inverse.IncidentGroup_num == 2)&(num_X_test_inverse.CalWeekDay == 0)][['CalWeekDay','HourOfCall', 'FirstPumpArriving_AttendanceTime','FirstPumpArriving_AttendTime_pred' ]].sort_values(['CalWeekDay','HourOfCall']).head(30)
-
+res.to_csv('data_full.csv')
 # Affichage des comparaisons Temps réels / Temps prédits par le modèle
 plt.figure(figsize=(15,8))
 plt.scatter(res.HourOfCall, res.FirstPumpArriving_AttendTime_pred, c='r', label='Temps Prédit')
