@@ -94,12 +94,12 @@ def add_parameter_ui(clf_name):
         params["n_estimators"] = n_estimators
         # params["criterion"] = criterion
     else:
-        loss = st.sidebar.selectbox('loss:',["lad", "huber", "quantile"])
+        # loss = st.sidebar.selectbox('loss:',["lad", "huber", "quantile"])
         n_estimators = st.sidebar.slider("n_estimators",100,5000,2500)
         # alpha=st.sidebar.slider("alpha",1,10)
         max_depth = st.sidebar.slider("max_depth",1,5,3)
         # params["alpha"] = alpha
-        params["loss"] = loss
+        # params["loss"] = loss
         params["n_estimators"] = n_estimators
         params["max_depth"] = max_depth
         # params["learning_rate"] = learning_rate
@@ -112,7 +112,7 @@ def get_classifier(clf_name,params):
     if clf_name=="LinearRegression":
         clf = LinearRegression(n_jobs=params["n_jobs"],normalize=True)
     elif clf_name =="GradientBoostingRegressor":
-        clf = GradientBoostingRegressor(n_estimators=params["n_estimators"],loss=params["loss"])
+        clf = GradientBoostingRegressor(n_estimators=params["n_estimators"],loss="lad")
     elif clf_name =="RandomForestRegressor":
         clf = RandomForestRegressor(n_estimators=params["n_estimators"],criterion="mse")
     return clf
