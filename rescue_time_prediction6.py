@@ -80,17 +80,7 @@ st.sidebar.header('Settings')
 classifier_name = st.sidebar.selectbox("Select model :", 
                                        ("LinearRegression","GradientBoostingRegressor","SGDRegressor","RandomForestRegressor"))
 
-#model = st.button("Please select your settings")
-#def run_status():
-#    latest_iteration = st.empty()
-#    bar = st.progress(0)
-#    for i in range(100):
-#        latest_iteration.text(f'Percent complete {i+1}')
-#        bar.progress(i+1)
-#        time.sleep(0.1)
-#        st.empty()
-#
-#run_status()
+
 
 # parameters by user
 # def add_parameter_ui(clf_name):
